@@ -7,7 +7,6 @@ const gameOptions = ["swipe", "tap", "turn"];
 
 const StartButton = styled.button`
   color: white;
-  border: 1px solid white;
   padding: 10px;
   background: black;
   font-family: "Archivo Black";
