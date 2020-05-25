@@ -36,7 +36,7 @@ function App() {
     Math.floor(Math.random() * Math.floor(gameOptions.length));
   const currentAction = gameOptions[randomNum()];
 
-  const isDesktop = (() => {
+  const isMobile = (() => {
     let check = false;
     (function(a) {
       if (
@@ -73,7 +73,7 @@ function App() {
           <StartButton onClick={setGameStart} className="startButton">
             START
           </StartButton>
-          {isDesktop && (
+          {!isMobile && (
             <DesktopNotificiation>
               For the best experience we recommend playing this game on a phone
               or tablet.
