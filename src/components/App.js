@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
-import GameBoard from './GameBoard';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import GameBoard from "./GameBoard";
+import styled from "styled-components";
 
-const states = { start: 'start', playing: 'playing', ended: 'ended' };
-const gameOptions = ['swipe', 'tap', 'turn'];
+const states = { start: "start", playing: "playing", ended: "ended" };
+const gameOptions = ["swipe", "tap", "turn"];
 
 const StartButton = styled.button`
   color: white;
   border: 1px solid white;
   padding: 10px;
   background: black;
+  font-family: "Archivo Black";
 `;
 
 const FullScreenFlexCenter = styled.div`
@@ -23,7 +24,7 @@ const FullScreenFlexCenter = styled.div`
 
 function App() {
   const [score, setScore] = useState(0);
-  const [gameState, setGameState] = useState(states.playing);
+  const [gameState, setGameState] = useState(states.start);
   const [sliderValue, setSliderValue] = useState(1);
   const randomNum = () =>
     Math.floor(Math.random() * Math.floor(gameOptions.length));
@@ -47,9 +48,9 @@ function App() {
       {gameState === states.start && (
         <FullScreenFlexCenter>
           <h1>TAP TURN SWIPE</h1>
-          <button onClick={setGameStart} className="startButton">
+          <StartButton onClick={setGameStart} className="startButton">
             START
-          </button>
+          </StartButton>
         </FullScreenFlexCenter>
       )}
       {gameState === states.playing && (
