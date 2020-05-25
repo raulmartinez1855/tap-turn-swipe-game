@@ -1,8 +1,25 @@
-import React, { useState } from "react";
-import GameBoard from "./GameBoard";
+import React, { useState } from 'react';
+import GameBoard from './GameBoard';
+import styled from 'styled-components';
 
-const states = { start: "start", playing: "playing", ended: "ended" };
-const gameOptions = ["swipe", "tap", "turn"];
+const states = { start: 'start', playing: 'playing', ended: 'ended' };
+const gameOptions = ['swipe', 'tap', 'turn'];
+
+const StartButton = styled.button`
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  background: black;
+`;
+
+const FullScreenFlexCenter = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
 
 function App() {
   const [score, setScore] = useState(0);
@@ -25,27 +42,22 @@ function App() {
     setGameState(states.playing);
   };
 
-  const randomColorStyles = {
-    background: `${score % 2 === 0 ? "black" : "white"}`,
-    color: `${score % 2 !== 0 ? "black" : "white"}`
-  };
-
   return (
     <div className="app">
       {gameState === states.start && (
-        <div className="flex-center-column full-screen">
+        <FullScreenFlexCenter>
           <h1>TAP TURN SWIPE</h1>
           <button onClick={setGameStart} className="startButton">
             START
           </button>
-        </div>
+        </FullScreenFlexCenter>
       )}
       {gameState === states.playing && (
         <GameBoard
           key={score}
           sliderValue={sliderValue}
           setSliderValue={setSliderValue}
-          randomColorStyles={randomColorStyles}
+          score={score}
           currentAction={currentAction}
           setScore={setScore}
           gameState={gameState}
@@ -53,12 +65,10 @@ function App() {
         />
       )}
       {gameState === states.ended && (
-        <div className="flex-center-column full-screen">
+        <FullScreenFlexCenter>
           <h3>SCORE: {score}</h3>
-          <button onClick={restartGame} className="startButton">
-            PLAY AGAIN
-          </button>
-        </div>
+          <StartButton onClick={restartGame}>PLAY AGAIN</StartButton>
+        </FullScreenFlexCenter>
       )}
     </div>
   );
