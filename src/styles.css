@@ -1,0 +1,44 @@
+html,
+body,
+#root,
+.app,
+.gameBoard {
+  font-family: sans-serif;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.startButton {
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  background: black;
+}
+
+.full-screen {
+  height: 100%;
+  width: 100%;
+}
+
+.flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slideBox {
+  height: 50px;
+  width: 200px;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
