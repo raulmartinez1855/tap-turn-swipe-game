@@ -5,7 +5,8 @@ import "./styles.css";
 
 console.log(`
 Hi Welcome, to Tap Turn Swipe! A simple but addictive game for phone and tablets.
-On your laptop or Desktop? Just choose of the phone presets in the Dev Tools.
+If you can read this you are probably on your Desktop or Laptop, for the best experience we recommend playing on your mobile device.
+However, you could turn on responsive mode and resize the browser on the 'TURN' action if you would like to play on a Desktop or Laptop.
 `);
 
 const rootElement = document.getElementById("root");
