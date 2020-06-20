@@ -11,13 +11,13 @@ const states = {
 };
 const gameOptions = ["swipe", "tap", "turn"];
 
-const DesktopNotificiation = styled.div`
-  position: absolute;
-  width: 280px;
-  text-align: left;
-  bottom: 50px;
-  font-family: "Archivo Black";
-`;
+// const DesktopNotificiation = styled.div`
+//   position: absolute;
+//   width: 280px;
+//   text-align: left;
+//   bottom: 50px;
+//   font-family: "Archivo Black";
+// `;
 const StartButton = styled.button`
   color: white;
   padding: 10px;

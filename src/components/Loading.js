@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import useCountDown from "../hooks/useCountDown";
-import AudioPlayer from "./AudioPlayer";
+// import AudioPlayer from "./AudioPlayer";
 
 const LoadingContainer = styled.div`
   height: 100%;
@@ -43,25 +43,25 @@ export default function Loading({ setGameStart }) {
       {countdown === 3 && (
         <>
           <LargeNumber>{countdown}</LargeNumber>
-          <AudioPlayer source={countdown} />
+          {/* <AudioPlayer source={countdown} /> */}
         </>
       )}
       {countdown === 2 && (
         <>
           <LargeNumber>{countdown}</LargeNumber>
-          <AudioPlayer source={countdown} />
+          {/* <AudioPlayer source={countdown} /> */}
         </>
       )}
       {countdown === 1 && (
         <>
           <LargeNumber>{countdown}</LargeNumber>
-          <AudioPlayer source={countdown} />
+          {/* <AudioPlayer source={countdown} /> */}
         </>
       )}
       {countdown === 0 && (
         <>
           <LargeNumber>GO!</LargeNumber>
-          <AudioPlayer source={countdown} />
+          {/* <AudioPlayer source={countdown} /> */}
         </>
       )}
     </LoadingContainer>
