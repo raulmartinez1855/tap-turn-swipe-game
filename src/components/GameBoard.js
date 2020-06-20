@@ -140,6 +140,9 @@ export default function GameBoard({
         max="2"
         value={sliderValue}
       />
+      <audio autoPlay>
+        <source src={`${currentAction}.mp3`} type="audio/mpeg" />
+      </audio>
     </GameBoardContainer>
   );
 }
