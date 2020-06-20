@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import useCountDown from "../hooks/useCountDown";
-// import AudioPlayer from "./AudioPlayer";
+import AudioPlayer from "./AudioPlayer";
 import styled from "styled-components";
 
 const Slider = styled.input`
@@ -141,7 +141,7 @@ export default function GameBoard({
         max="2"
         value={sliderValue}
       />
-      {/* <AudioPlayer source={currentAction} /> */}
+      <AudioPlayer source={currentAction} />
     </GameBoardContainer>
   );
 }
