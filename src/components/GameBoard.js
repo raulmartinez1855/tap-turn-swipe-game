@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import useCountDown from "../hooks/useCountDown";
+import AudioPlayer from "./AudioPlayer";
 import styled from "styled-components";
 
 const Slider = styled.input`
@@ -140,9 +141,7 @@ export default function GameBoard({
         max="2"
         value={sliderValue}
       />
-      <audio autoPlay>
-        <source src={`${currentAction}.mp3`} type="audio/mpeg" />
-      </audio>
+      <AudioPlayer source={currentAction} />
     </GameBoardContainer>
   );
 }

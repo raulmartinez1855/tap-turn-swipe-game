@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import GameBoard from "./GameBoard";
+import Loading from "./Loading";
 import styled from "styled-components";
 
-const states = { start: "start", playing: "playing", ended: "ended" };
+const states = {
+  start: "start",
+  loading: "loading",
+  playing: "playing",
+  ended: "ended"
+};
 const gameOptions = ["swipe", "tap", "turn"];
 
 const DesktopNotificiation = styled.div`
@@ -32,6 +38,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [gameState, setGameState] = useState(states.start);
   const [sliderValue, setSliderValue] = useState(1);
+
   const randomNum = () =>
     Math.floor(Math.random() * Math.floor(gameOptions.length));
   const currentAction = gameOptions[randomNum()];
@@ -58,7 +65,11 @@ function App() {
 
   const restartGame = () => {
     setScore(0);
-    setGameState(states.playing);
+    setGameState(states.loading);
+  };
+
+  const setGameLoading = () => {
+    setGameState(states.loading);
   };
 
   const setGameStart = () => {
@@ -70,7 +81,7 @@ function App() {
       {gameState === states.start && (
         <FullScreenFlexCenter>
           <h1>TAP TURN SWIPE</h1>
-          <StartButton onClick={setGameStart} className="startButton">
+          <StartButton onClick={setGameLoading} className="startButton">
             START
           </StartButton>
           {!isMobile && (
@@ -81,6 +92,7 @@ function App() {
           )}
         </FullScreenFlexCenter>
       )}
+      {gameState === states.loading && <Loading setGameStart={setGameStart} />}
       {gameState === states.playing && (
         <GameBoard
           key={score}
